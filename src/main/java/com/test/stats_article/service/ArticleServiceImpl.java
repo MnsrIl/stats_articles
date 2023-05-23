@@ -31,7 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
                 request.getTitle());
 
         if (isAlreadyExists)
-            throw new ConflictException("Article with provided data already exists!");
+            throw new ConflictException("Article with provided data already exists");
 
         Article article = new Article();
 

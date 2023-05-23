@@ -5,6 +5,7 @@ import com.test.stats_article.api.response.ArticleResponse;
 import com.test.stats_article.service.ArticleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ArticleResponse create(@Valid @RequestBody CreateArticleRequest request) {
         return articleService.create(request);
     };
